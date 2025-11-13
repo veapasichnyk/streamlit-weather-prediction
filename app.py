@@ -23,9 +23,9 @@ st.markdown(
 # =========================
 @st.cache_resource
 def load_pipeline():
-    path = Path("aussie_rain_pipeline.joblib")
+    path = Path("aussie_rain_pipeline_compressed.joblib")
     if not path.exists():
-        st.error("Файл aussie_rain_pipeline.joblib не знайдено у корені. "
+        st.error("Файл aussie_rain_pipeline_compressed.joblib не знайдено у корені. "
                  "Скопіюй його в ту ж папку, де лежить app.py.")
         st.stop()
     pipe = joblib.load(path)
