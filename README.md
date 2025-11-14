@@ -29,11 +29,12 @@
 ## 📁 Структура репозиторію
 
 ```
-streamlit-aussie-rain/
-│── app.py                                    # Streamlit-додаток
-│── aussie_rain_pipeline_compressed.joblib    # Збережений ML-пайплайн
-│── requirements.txt                          # Залежності
-└── README.md                                 # Опис проєкту
+streamlit-weather-prediction/
+│── app.py
+│── aussie_rain_pipeline_small.joblib
+│── images/
+│     └── weather_header.png  
+                             
 ```
 
 ---

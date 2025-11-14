@@ -3,12 +3,18 @@ import pandas as pd
 import numpy as np
 import joblib
 from pathlib import Path
+from PIL import Image
+
 
 st.set_page_config(
     page_title="Will it rain tomorrow? ☔",
     page_icon="☔",
     layout="centered",
 )
+
+# --- Header Image ---
+image = Image.open("images/weather_header.png")
+st.image(image, use_column_width=True)
 
 st.title("Will it rain tomorrow? ☔")
 st.markdown(
