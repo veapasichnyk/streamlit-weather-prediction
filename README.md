@@ -6,8 +6,8 @@
 
 ## 🚀 Demo
 
-🔗 **Live App:** _додаси після деплою_  
-📦 **Model Pipeline:** `aussie_rain_pipeline.joblib`
+🔗 **Live App:** (https://app-weather-prediction-tomorrow.streamlit.app/)  
+📦 **Model Pipeline:** `aussie_rain_pipeline_compressed`
 
 ---
 
@@ -15,7 +15,7 @@
 
 Це веб-додаток, створений на **Streamlit**, який прогнозує, чи буде дощ завтра на основі метеорологічних даних.
 
-Модель будується на основі **Logistic Regression** та повного **ML pipeline**, що включає:
+Модель будується на основі **RandomForestClassifier** та повного **ML pipeline**, що включає:
 
 - імпутацію пропусків  
 - масштабування  
@@ -30,10 +30,10 @@
 
 ```
 streamlit-aussie-rain/
-│── app.py                         # Streamlit-додаток
-│── aussie_rain_pipeline.joblib    # Збережений ML-пайплайн
-│── requirements.txt               # Залежності
-└── README.md                      # Опис проєкту
+│── app.py                                    # Streamlit-додаток
+│── aussie_rain_pipeline_compressed.joblib    # Збережений ML-пайплайн
+│── requirements.txt                          # Залежності
+└── README.md                                 # Опис проєкту
 ```
 
 ---
@@ -57,7 +57,11 @@ Pipeline(steps=[
             ]), categorical_cols)
         ]
     )),
-    ('classifier', LogisticRegression(solver='liblinear'))
+    ('classifier', RandomForestClassifier(
+        n_estimators=200,
+        max_depth=None,
+        random_state=42
+    ))
 ])
 ```
 
@@ -82,7 +86,7 @@ Pipeline(steps=[
 
 ### 1. Клонувати репозиторій
 ```bash
-git clone https://github.com/<your_username>/streamlit-aussie-rain.git
+git clone https://github.com/veapasichnyk/streamlit-aussie-rain.git
 cd streamlit-aussie-rain
 ```
 
@@ -95,18 +99,6 @@ pip install -r requirements.txt
 ```bash
 streamlit run app.py
 ```
-
----
-
-## 🌐 Деплоймент на Streamlit Cloud
-
-1. Завантаж репозиторій на GitHub  
-2. Перейди на: https://streamlit.io/cloud  
-3. Натисни **New app**  
-4. Обери свій репозиторій  
-5. Вкажи файл запуску: `app.py`  
-6. Дочекайся деплою  
-7. Отримай публічний URL 🌍  
 
 ---
 
@@ -124,7 +116,7 @@ streamlit run app.py
 ## 💡 Автор
 
 **Вероніка Пасічник**  
-ML & Data Science Enthusiast · Weather Modelling · Streamlit Deployment
+· Weather Modelling · Streamlit Deployment
 
 ---
 
